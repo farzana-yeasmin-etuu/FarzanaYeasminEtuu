@@ -35,7 +35,7 @@ const Hero = ({ themeColor, darkMode }) => {
 
         {/* TYPING TEXT */}
 
-        <div className="min-h-25 md:min-h-35">
+        <div className="min-h-25 md:min-h-32">
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
 
@@ -201,7 +201,7 @@ const Hero = ({ themeColor, darkMode }) => {
         <img
           src="/profile.jpg"
           alt="profile"
-          className="w-64 sm:w-72 md:w-105 object-cover rounded-2xl"
+          className="w-64 sm:w-72 md:w-80 object-cover rounded-"
         />
 
         {/* BOTTOM BORDER */}
