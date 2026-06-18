@@ -16,6 +16,7 @@ const Hero = ({ themeColor, darkMode }) => {
       id="home"
       className="min-h-screen pt-24 md:pt-0 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between px-6 md:px-20 gap-12"
     >
+      
 
       {/* ================= LEFT ================= */}
 
@@ -187,31 +188,50 @@ const Hero = ({ themeColor, darkMode }) => {
 
       {/* ================= IMAGE ================= */}
 
-      <div className="relative flex justify-center">
+      {/* IMAGE */}
 
-        {/* TOP BORDER */}
 
-        <div
-          className="absolute -top-5 -left-5 w-20 h-20 border-t-8 border-l-8"
-          style={{ borderColor: themeColor }}
-        ></div>
+<div className="relative flex justify-center items-center md:bottom-25">
 
-        {/* IMAGE */}
+  <div
+    className="
+      absolute
+      w-72 h-72
+      sm:w-76 sm:h-76
+      md:w-94 md:h-94
+      rounded-full
+      p-2
+    "
+    style={{
+      background: `linear-gradient(135deg, ${themeColor}, transparent, ${themeColor})`,
+    }}
+  >
+  </div>
 
-        <img
-          src="/profile.jpg"
-          alt="profile"
-          className="w-64 sm:w-72 md:w-80 object-cover rounded-"
-        />
+  <img
+    src="/profile.jpg"
+    alt="profile"
+    className="
+      relative
+      z-10
+      w-64 h-64
+      sm:w-72 sm:h-72
+      md:w-90 md:h-90
+      rounded-full
+      object-cover
+    "
+  />
 
-        {/* BOTTOM BORDER */}
+</div>
 
-        <div
-          className="absolute -bottom-5 -right-5 w-20 h-20 border-b-8 border-r-8"
-          style={{ borderColor: themeColor }}
-        ></div>
 
-      </div>
+
+
+
+
+
+
+      
 
     </section>
   );

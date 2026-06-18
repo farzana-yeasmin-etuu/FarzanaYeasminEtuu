@@ -19,8 +19,15 @@ function App() {
 
   // Dark Mode
   const [darkMode, setDarkMode] = useState(true);
+  
+
+  
 
   return (
+     
+
+    
+    
 
     <div
       className={`min-h-screen transition-all duration-300
@@ -98,7 +105,7 @@ function App() {
 
       </div>
 
-    </div>
+    </div> 
 
   );
 }
