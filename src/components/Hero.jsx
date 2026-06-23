@@ -24,9 +24,9 @@ const Hero = ({ themeColor, darkMode }) => {
 
         {/* NAME */}
 
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-5 leading-snug">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-5 leading-snug">
 
-          Hello, My name is{" "}
+          Hello, I'm{" "}
 
           <span style={{ color: themeColor }}>
             Farzana Yeasmin
@@ -36,9 +36,9 @@ const Hero = ({ themeColor, darkMode }) => {
 
         {/* TYPING TEXT */}
 
-        <div className="min-h-25 md:min-h-">
+        <div className="min-h-25 md:min-h-32 ">
 
-          <h1 className=" text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+          <h1 className=" text-3xl sm:text-3xl md:text-4xl font-bold leading-tight">
 
             I'm a{" "}
 
@@ -76,7 +76,7 @@ const Hero = ({ themeColor, darkMode }) => {
 
         {/* ================= SOCIAL ICONS ================= */}
 
-        <div className="flex gap-4 justify-center md:justify-start md:mt-5 md:mb-3">
+        <div className="flex gap-4 justify-center md:justify-start  md:mb-8">
 
           {/* LINKEDIN */}
 
@@ -142,7 +142,7 @@ const Hero = ({ themeColor, darkMode }) => {
 
         {/* ================= BUTTONS ================= */}
 
-        <div className="flex flex-wrap gap-4 justify-center md:justify-start md:mt-7">
+        <div className="flex flex-wrap gap-4 justify-center md:justify-start mt-5 md:mt-5">
 
           {/* HIRE ME */}
 
