@@ -14,7 +14,7 @@ const Hero = ({ themeColor, darkMode }) => {
 
     <section
       id="home"
-      className="min-h-screen pt-24 md:pt-0 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between px-6 md:px-20 gap-12"
+      className="min-h-screen pt-25 md:pt-0 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between px-6 md:px-20 gap-12"
     >
       
 
@@ -36,30 +36,32 @@ const Hero = ({ themeColor, darkMode }) => {
 
         {/* TYPING TEXT */}
 
-        <div className="min-h-25 md:min-h-32">
+        <div className="min-h-25 md:min-h-">
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+          <h1 className=" text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
 
-            I'm into{" "}
+            I'm a{" "}
 
             <span style={{ color: themeColor }}>
 
               <TypeAnimation
                 sequence={[
-                  "Full Stack Developer",
-                  1500,
 
                   "Frontend Developer",
                   1500,
 
-                  "React Developer",
+                  "Aspiring Full Stack Developer",
                   1500,
 
-                  "AI Enthusiast",
+                   "AI Enthusiast",
                   1500,
 
-                  "Freelancer",
+                  "Aspiring React Developer",
                   1500,
+
+                 
+
+                 
                 ]}
                 wrapper="span"
                 speed={50}
@@ -74,7 +76,7 @@ const Hero = ({ themeColor, darkMode }) => {
 
         {/* ================= SOCIAL ICONS ================= */}
 
-        <div className="flex gap-4 justify-center md:justify-start mb-8">
+        <div className="flex gap-4 justify-center md:justify-start md:mt-5 md:mb-3">
 
           {/* LINKEDIN */}
 
@@ -140,7 +142,7 @@ const Hero = ({ themeColor, darkMode }) => {
 
         {/* ================= BUTTONS ================= */}
 
-        <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+        <div className="flex flex-wrap gap-4 justify-center md:justify-start md:mt-7">
 
           {/* HIRE ME */}
 
