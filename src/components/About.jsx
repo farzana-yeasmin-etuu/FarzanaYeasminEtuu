@@ -14,6 +14,7 @@ const About = ({ themeColor, darkMode }) => {
           className="w-16 h-1 mt-4"
           style={{ background: themeColor }}
         ></div>
+        
 
         <div
           className="w-8 h-1 mt-2"
