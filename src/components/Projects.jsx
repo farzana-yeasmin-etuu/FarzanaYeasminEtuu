@@ -1,12 +1,14 @@
+import { useState } from "react";
 import {
   FaGithub,
   FaExternalLinkAlt,
 } from "react-icons/fa";
 
 const Projects = ({ themeColor, darkMode }) => {
+  // See More / See Less state
+  const [showAll, setShowAll] = useState(false);
 
   const projects = [
-
     {
       title: "Art Gallery",
       image: "/projects/artgallery.png",
@@ -15,16 +17,6 @@ const Projects = ({ themeColor, darkMode }) => {
       tech: ["HTML", "CSS", "JavaScript"],
       live: "https://farzana-yeasmin-etuu.github.io/Art_Gallery_project/",
       code: "https://github.com/farzana-yeasmin-etuu/Art_Gallery_project",
-    },
-
-    {
-      title: "Solar System Explorer",
-      image: "/projects/solar_system.png",
-      description:
-        "Computer graphics project exploring planets and space.",
-      tech: ["OpenGL", "C++", "Graphics"],
-      live: "https://www.youtube.com/watch?v=1s5-pqOANuk",
-      code: "https://github.com/farzana-yeasmin-etuu/Solar_System_Explorer-Computer_Graphics_Project-",
     },
 
     {
@@ -38,16 +30,6 @@ const Projects = ({ themeColor, darkMode }) => {
     },
 
     {
-      title: "E-Food Service",
-      image: "/projects/foodapp.png",
-      description:
-        "Food ordering service website with responsive layout.",
-      tech: ["HTML", "Tailwind", "JavaScript"],
-      live: "https://farzana-yeasmin-etuu.github.io/E-Food_Service/",
-      code: "https://github.com/farzana-yeasmin-etuu/E-Food_Service",
-    },
-
-    {
       title: "Quiz App",
       image: "/projects/quiz_app.png",
       description:
@@ -55,6 +37,26 @@ const Projects = ({ themeColor, darkMode }) => {
       tech: ["React", "JavaScript", "CSS"],
       live: "https://quiizappppp.netlify.app/",
       code: "https://github.com/farzana-yeasmin-etuu/Quiz_App/tree/main/Quiz-App",
+    },
+
+    {
+      title: "Solar System Explorer",
+      image: "/projects/solar_system.png",
+      description:
+        "Computer graphics project exploring planets and space.",
+      tech: ["OpenGL", "C++", "Graphics"],
+      live: "https://www.youtube.com/watch?v=1s5-pqOANuk",
+      code: "https://github.com/farzana-yeasmin-etuu/Solar_System_Explorer-Computer_Graphics_Project-",
+    },
+
+    {
+      title: "E-Food Service",
+      image: "/projects/foodapp.png",
+      description:
+        "Food ordering service website with responsive layout.",
+      tech: ["HTML", "Tailwind", "JavaScript"],
+      live: "https://farzana-yeasmin-etuu.github.io/E-Food_Service/",
+      code: "https://github.com/farzana-yeasmin-etuu/E-Food_Service",
     },
 
     {
@@ -86,11 +88,14 @@ const Projects = ({ themeColor, darkMode }) => {
       live: "https://farzana-yeasmin-etuu.github.io/Landing-page-LaslesVPN/",
       code: "https://github.com/farzana-yeasmin-etuu/Landing-page-LaslesVPN",
     },
-
   ];
 
-  return (
+  // প্রথম 3টা অথবা সবগুলো project
+  const visibleProjects = showAll
+    ? projects
+    : projects.slice(0, 3);
 
+  return (
     <section
       id="projects"
       className={`min-h-screen px-6 md:px-12 lg:px-16 py-20 transition-all duration-300
@@ -102,7 +107,6 @@ const Projects = ({ themeColor, darkMode }) => {
     >
 
       {/* TITLE */}
-
       <div className="mb-14">
 
         <h2 className="text-4xl md:text-5xl font-bold">
@@ -116,11 +120,11 @@ const Projects = ({ themeColor, darkMode }) => {
 
       </div>
 
-      {/* PROJECT GRID */}
 
+      {/* PROJECT GRID */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 gap-8">
 
-        {projects.map((project, index) => (
+        {visibleProjects.map((project, index) => (
 
           <div
             key={index}
@@ -133,7 +137,6 @@ const Projects = ({ themeColor, darkMode }) => {
           >
 
             {/* IMAGE */}
-
             <div className="overflow-hidden">
 
               <img
@@ -144,13 +147,14 @@ const Projects = ({ themeColor, darkMode }) => {
 
             </div>
 
-            {/* CONTENT */}
 
+            {/* CONTENT */}
             <div className="p-6">
 
               <h3 className="text-2xl font-bold mb-3">
                 {project.title}
               </h3>
+
 
               <p
                 className={`text-sm leading-7 mb-5
@@ -163,8 +167,8 @@ const Projects = ({ themeColor, darkMode }) => {
                 {project.description}
               </p>
 
-              {/* TECH STACK */}
 
+              {/* TECH STACK */}
               <div className="flex flex-wrap gap-2 mb-6">
 
                 {project.tech.map((item, i) => (
@@ -184,10 +188,11 @@ const Projects = ({ themeColor, darkMode }) => {
 
               </div>
 
-              {/* BUTTONS */}
 
+              {/* BUTTONS */}
               <div className="flex gap-4">
 
+                {/* LIVE */}
                 <a
                   href={project.live}
                   target="_blank"
@@ -204,6 +209,8 @@ const Projects = ({ themeColor, darkMode }) => {
                   </span>
                 </a>
 
+
+                {/* CODE */}
                 <a
                   href={project.code}
                   target="_blank"
@@ -230,8 +237,27 @@ const Projects = ({ themeColor, darkMode }) => {
 
       </div>
 
-    </section>
 
+      {/* SEE MORE / SEE LESS BUTTON */}
+      {projects.length > 3 && (
+
+        <div className="flex justify-center mt-12">
+
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="px-8 py-3 rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 shadow-lg"
+            style={{
+              backgroundColor: themeColor,
+            }}
+          >
+            {showAll ? "See Less" : "See More"}
+          </button>
+
+        </div>
+
+      )}
+
+    </section>
   );
 };
 
