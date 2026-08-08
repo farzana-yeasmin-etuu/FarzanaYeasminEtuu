@@ -9,9 +9,9 @@ import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Achievements from "./components/Achievements";
 import Contact from "./components/Contact";
+import BackgroundEffects from "./components/BackgroundEffects";
 
 function App() {
-
   const [open, setOpen] = useState(false);
 
   // Theme Color
@@ -19,24 +19,17 @@ function App() {
 
   // Dark Mode
   const [darkMode, setDarkMode] = useState(true);
-  
-
-  
 
   return (
-     
-
-    
-    
-
     <div
-      className={`min-h-screen transition-all duration-300
-      ${
+      className={`relative min-h-screen transition-all duration-300 ${
         darkMode
           ? "bg-black text-white"
           : "bg-white text-black"
       }`}
     >
+      {/* Background Effects */}
+      <BackgroundEffects themeColor={themeColor} />
 
       {/* Navbar */}
       <Navbar
@@ -54,8 +47,7 @@ function App() {
       />
 
       {/* Main Content */}
-      <div className="md:ml-64 pt-24">
-
+      <div className="relative z-10 md:ml-64 pt-24">
         {/* Theme Switcher */}
         <ThemeSwitcher
           themeColor={themeColor}
@@ -90,23 +82,17 @@ function App() {
 
         {/* Achievements */}
         <Achievements
-  themeColor={themeColor}
-  darkMode={darkMode}
-/>   
-
+          themeColor={themeColor}
+          darkMode={darkMode}
+        />
 
         {/* Contact */}
-
         <Contact
-  themeColor={themeColor}
-  darkMode={darkMode}
-/>
-        
-
+          themeColor={themeColor}
+          darkMode={darkMode}
+        />
       </div>
-
-    </div> 
-
+    </div>
   );
 }
 

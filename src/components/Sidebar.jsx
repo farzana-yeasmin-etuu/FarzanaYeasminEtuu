@@ -32,7 +32,7 @@ const Sidebar = ({
      <div
   className={`hidden md:flex flex-col
   w-72 min-h-screen fixed left-0 top-0
-  px-8 py-10 border-r z-40
+  px-8 py-10 border-r z-50
 
   ${
     darkMode
